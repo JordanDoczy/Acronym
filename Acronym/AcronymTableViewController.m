@@ -25,7 +25,10 @@ NSString *lastSearch;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Acroynm Finder";
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapReceived:)];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+    
+    self.title = @"Acronym Lookup";
     self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
     self.searchBar.delegate = self;
     self.searchBar.placeholder = Prompt;
@@ -63,9 +66,6 @@ NSString *lastSearch;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView { return self.listItems.count; }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    //AcromineResult *result = ((AcromineResult *)self.listItems[section]).variations.count;
-    //unsigned long count = result.variations.count;
     return ((AcromineResult *)self.listItems[section]).variations.count;
 }
 
@@ -105,10 +105,19 @@ NSString *lastSearch;
     NSString *search = [searchBar.text stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 
     [self makeAcromineRequest:[NSString stringWithFormat:@"%@%@", RestService, search]];
+    [searchBar resignFirstResponder];
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    self.searchBar.placeholder = Prompt;
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    searchBar.placeholder = Prompt;
+}
+
+// MARK: Tap Handler
+
+-(void)tapReceived:(UITapGestureRecognizer *)tapGestureRecognizer
+{
+    // hide the keyboard when the user clicks outside of the search area
+    [self.searchBar resignFirstResponder];
 }
 
 
