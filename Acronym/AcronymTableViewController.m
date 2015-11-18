@@ -18,6 +18,7 @@ NSString *const NoResults = @"No results found";
 NSString *const Prompt = @"Please enter an acronym or initialism";
 NSString *const RestService = @"http://www.nactem.ac.uk/software/acromine/dictionary.py?sf=";
 
+// Record last search, used for verifying results returned from REST Service match query
 NSString *lastSearch;
 
 // MARK: View Controller Lifecycle
@@ -98,7 +99,6 @@ NSString *lastSearch;
         return;
     }
 
-    // record last search, used for verifying results returned from REST Service match query
     lastSearch = self.searchBar.text;
     
     // url encode search

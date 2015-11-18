@@ -11,7 +11,5 @@
 @interface AcromineRequest : NSObject
     
 - (void) fetch:(NSString *)urlString :(void (^)(NSArray *))handler;
-@property (nonatomic) AFHTTPRequestOperationManager *manager;
-
 
 @end

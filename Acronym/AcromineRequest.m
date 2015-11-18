@@ -33,7 +33,7 @@
 
         }
         @catch (NSException *exception) {
-            //NSLog(@"%@", exception.reason);
+            NSLog(@"%@%@", @"No results found at: ", urlString);
         }
         
         

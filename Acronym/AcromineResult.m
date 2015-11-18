@@ -10,9 +10,7 @@
 
 @implementation AcromineResult
 
-@synthesize frequency;
 @synthesize description;
-@synthesize yearEstablished;
 
 NSString *const Frequency = @"freq";
 NSString *const Description = @"lf";
@@ -23,9 +21,8 @@ NSString *const Variations = @"vars";
     self.frequency = ((NSString *)dictionary[Frequency]).intValue;
     self.description = dictionary[Description];
     self.yearEstablished = ((NSString *)dictionary[YearEstablished]).intValue;
-    
     self.variations = [NSMutableArray array];
-
+    
     for (NSDictionary *variation in dictionary[Variations] ){
         AcromineResult *result = [[AcromineResult alloc] initWithDictionary:variation];
         [self.variations addObject:result];

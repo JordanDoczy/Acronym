@@ -10,7 +10,7 @@
 
 @interface AcronymTableViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
 
-@property (strong) NSArray *listItems;
+@property NSArray *listItems;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

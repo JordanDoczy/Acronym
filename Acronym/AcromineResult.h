@@ -10,11 +10,7 @@
 
 @interface AcromineResult : NSObject
 
-FOUNDATION_EXPORT NSString *const Frequency;
-FOUNDATION_EXPORT NSString *const Description;
-FOUNDATION_EXPORT NSString *const YearEstablished;
-
-@property (copy) NSString *description;
+@property NSString *description;
 @property int frequency;
 @property int yearEstablished;
 @property NSMutableArray *variations;
