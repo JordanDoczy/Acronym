@@ -96,6 +96,7 @@
 		E64CDA791BF7EA0E00F48A60 /* Acronym */ = {
 			isa = PBXGroup;
 			children = (
+				E64CDA881BF7EA0E00F48A60 /* LaunchScreen.storyboard */,
 				E64CDA831BF7EA0E00F48A60 /* Main.storyboard */,
 				E64CDA911BF7EA2800F48A60 /* AcronymTableViewController.h */,
 				E64CDA921BF7EA2800F48A60 /* AcronymTableViewController.m */,
@@ -116,7 +117,6 @@
 				E64CDA7D1BF7EA0E00F48A60 /* AppDelegate.h */,
 				E64CDA7E1BF7EA0E00F48A60 /* AppDelegate.m */,
 				E64CDA861BF7EA0E00F48A60 /* Assets.xcassets */,
-				E64CDA881BF7EA0E00F48A60 /* LaunchScreen.storyboard */,
 				E64CDA8B1BF7EA0E00F48A60 /* Info.plist */,
 				E64CDA7B1BF7EA0E00F48A60 /* main.m */,
 			);
